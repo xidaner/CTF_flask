@@ -1,0 +1,11 @@
+{% include('header.html') %}
+{% if current_user.is_authenticated %}
+<h1 class="nav">Hello {{ session['name'] }}</h1>
+{% endif %}
+{% if current_user.is_authenticated and session['name'] == 'admin' %}
+<h1 class="nav">flag{0f9f6a57-46a9-4c5c-a515-80282044f733}</h1>
+{% endif %}
+<!-- you are not admin -->
+<h1 class="nav">Welcome to Cyberpunk CTF</h1>
+
+{% include('footer.html') %}
